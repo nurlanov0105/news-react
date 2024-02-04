@@ -28,7 +28,10 @@ const Pagination = ({
             })}
          </div>
 
-         <button disabled={currentPage === 10} onClick={handleNextPage} className={styles.arrow}>
+         <button
+            disabled={currentPage >= totalPages}
+            onClick={handleNextPage}
+            className={styles.arrow}>
             {'>'}
          </button>
       </div>
