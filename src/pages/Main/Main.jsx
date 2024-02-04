@@ -1,19 +1,24 @@
 import { useEffect, useState } from 'react';
+import { getNews } from '../../api/apiNews';
 
 import styles from './styles.module.scss';
 import NewsBanner from '../../components/NewsBanner/NewsBanner';
-
-import { getNews } from '../../api/apiNews';
 import NewsList from '../../components/NewsList/NewsList';
+import Skeleton from '../../components/Skeleton/Skeleton';
 
 const Main = () => {
    const [news, setNews] = useState([]);
+   const [isLoading, setIsLoading] = useState(true);
 
    useEffect(() => {
       const fetchNews = async () => {
          try {
+            setIsLoading(true);
+
             const response = await getNews();
             setNews(response.news);
+
+            setIsLoading(false);
          } catch (error) {
             console.log(error);
          }
@@ -23,8 +28,8 @@ const Main = () => {
 
    return (
       <main className={styles.main}>
-         {news.length > 0 ? <NewsBanner item={news[17]} /> : null}
-         {news.length > 0 ? <NewsList news={news} /> : null}
+         {!isLoading ? <NewsBanner item={news[17]} /> : <Skeleton count={1} type='banner' />}
+         {!isLoading ? <NewsList news={news} /> : <Skeleton count={10} type='item' />}
       </main>
    );
 };
