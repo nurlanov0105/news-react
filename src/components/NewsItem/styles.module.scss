@@ -1,0 +1,29 @@
+.card {
+   max-height: 64px;
+   display: flex;
+   align-items: center;
+   column-gap: 16px;
+
+   .wrapper {
+      width: 64px;
+      height: 64px;
+      background-color: #f2f4f2;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+   }
+
+   .body {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+
+      .title {
+         font-size: 14px;
+         font-weight: 700;
+         line-height: 1.42;
+         color: #090a0a;
+      }
+   }
+}
