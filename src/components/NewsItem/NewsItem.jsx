@@ -1,4 +1,4 @@
-import { formatTimeAgo } from '../../utils/formatTimeAge';
+import { formatTimeAgo } from '../../helper/formatTimeAge';
 import styles from './styles.module.scss';
 
 const NewsItem = ({ item }) => {
