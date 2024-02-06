@@ -18,3 +18,31 @@
    line-height: 1.33;
    color: #6c7072;
 }
+
+.app {
+   &.dark {
+      .container {
+         background-color: #23272f;
+
+         p,
+         h3,
+         h4,
+         h1 {
+            color: #f6f7f9;
+         }
+      }
+   }
+
+   &.light {
+      .container {
+         background-color: white;
+
+         p,
+         h4,
+         h3,
+         h1 {
+            color: black;
+         }
+      }
+   }
+}
