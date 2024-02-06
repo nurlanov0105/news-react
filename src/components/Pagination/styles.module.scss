@@ -4,26 +4,48 @@
    justify-content: center;
    gap: 12px;
    width: 100%;
-}
 
-.arrow,
-.pageNumber {
-   border: none;
-   background-color: white;
-   cursor: pointer;
-}
+   .arrow,
+   .pageNumber {
+      border: none;
 
-.arrow:disabled,
-.pageNumber:disabled {
-   cursor: default;
-}
+      cursor: pointer;
+   }
 
-.pageNumber {
-   padding: 8px;
-}
+   .arrow:disabled,
+   .pageNumber:disabled {
+      cursor: default;
+   }
 
-.list {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   .pageNumber {
+      padding: 8px;
+   }
+
+   .list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &.dark {
+      .arrow,
+      .pageNumber {
+         &:disabled {
+            color: #7a7a7a;
+         }
+         background-color: #23272f;
+         color: #f6f7f9;
+      }
+   }
+
+   &.light {
+      .arrow,
+      .pageNumber {
+         &:disabled {
+            color: #9e9e9e;
+         }
+         background-color: white;
+         color: black;
+      }
+   }
 }

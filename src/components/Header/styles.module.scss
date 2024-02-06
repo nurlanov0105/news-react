@@ -1,22 +1,59 @@
 .header {
    display: flex;
-   flex-direction: column;
-   gap: 12px;
+   justify-content: space-between;
+   align-items: center;
    width: 100%;
    padding: 12px 24px;
    background-color: white;
-   border-bottom: 1px solid #f2f4f5;
-}
 
-.title {
-   font-size: 32px;
-   font-weight: 700;
-   line-height: 1.12;
-   color: #090a0a;
-}
-.date {
-   font-size: 16px;
-   font-weight: 400;
-   line-height: 1;
-   color: #090a0a;
+   .title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.12;
+   }
+   .date {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1;
+   }
+
+   &.dark {
+      background-color: #23272f;
+      border-bottom: 1px solid rgb(60, 60, 60);
+
+      .title {
+         color: white;
+      }
+
+      .date {
+         color: white;
+      }
+   }
+   &.light {
+      background-color: white;
+      border-bottom: 1px solid #f2f4f5;
+
+      .title {
+         color: #090a0a;
+      }
+
+      .date {
+         color: #090a0a;
+      }
+   }
+
+   .info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+   }
+
+   .theme {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      background-color: #fff;
+      border-radius: 50%;
+   }
 }
