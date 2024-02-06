@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import styles from './styles.module.scss';
+import { IPaginationProps } from '../../interfaces';
 
 const Pagination = ({
    totalPages,
@@ -7,7 +7,7 @@ const Pagination = ({
    handlePreviousPage,
    handlePageClick,
    currentPage,
-}) => {
+}: IPaginationProps) => {
    return (
       <div className={styles.pagination}>
          <button disabled={currentPage === 1} onClick={handlePreviousPage} className={styles.arrow}>

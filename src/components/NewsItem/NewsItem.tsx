@@ -1,7 +1,12 @@
 import { formatTimeAgo } from '../../helper/formatTimeAge';
+import { INews } from '../../interfaces';
 import styles from './styles.module.scss';
 
-const NewsItem = ({ item }) => {
+interface Props {
+   item: INews;
+}
+
+const NewsItem = ({ item }: Props) => {
    return (
       <li className={styles.card}>
          <div className={styles.wrapper} style={{ backgroundImage: `url(${item.image})` }}></div>
