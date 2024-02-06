@@ -9,6 +9,7 @@ import NewsFilters from '../NewsFilters/NewsFilters';
 
 import styles from './styles.module.scss';
 import PaginationWrapper from '../PaginationWrapper/PaginationWrapper';
+import { NewsApiRespone, ParamsType } from '../../interfaces';
 
 const NewsByFilters = () => {
    const { filters, changeFilter } = useFilters({
@@ -20,7 +21,7 @@ const NewsByFilters = () => {
 
    const debouncedKeywords = useDebounce(filters.keywords, 500);
 
-   const { data, isLoading } = useFetch(getNews, {
+   const { data, isLoading } = useFetch<NewsApiRespone, ParamsType>(getNews, {
       ...filters,
       keywords: debouncedKeywords,
    });
@@ -37,7 +38,7 @@ const NewsByFilters = () => {
       }
    };
 
-   const handlePageClick = (pageNumber) => {
+   const handlePageClick = (pageNumber: number) => {
       changeFilter('page_number', pageNumber);
    };
 
